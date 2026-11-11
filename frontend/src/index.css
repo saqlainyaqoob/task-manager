@@ -23,6 +23,29 @@
   box-shadow: 0 8px 32px rgb(0 0 0 / 0.25), inset 0 1px 0 rgb(255 255 255 / 0.25);
 }
 
+
+@utility modal-panel {
+  background: radial-gradient(
+    circle,
+    rgba(7, 36, 250, 0.96) 22%,
+    rgba(111, 23, 195, 0.96) 45%,
+    rgba(145, 19, 177, 0.97) 74%,
+    rgba(235, 7, 128, 0.98) 100%
+  );
+
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+
+  border: 1px solid rgb(255 255 255 / 0.30);
+
+  box-shadow:
+    0 12px 35px rgb(0 0 0 / 0.25),
+    inset 0 1px 0 rgb(255 255 255 / 0.20);
+
+  color: #ffffff;
+}
+
+
 @utility field {
   width: 100%;
   border-radius: 0.75rem;

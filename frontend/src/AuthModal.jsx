@@ -25,7 +25,7 @@ export default function AuthModal({ mode, setMode, onDone, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/50 p-4" onClick={onClose}>
-      <form onSubmit={submit} onClick={(e) => e.stopPropagation()} className="glass w-full max-w-sm space-y-4 rounded-3xl p-6">
+      <form onSubmit={submit} onClick={(e) => e.stopPropagation()} className="modal-panel  w-full max-w-sm space-y-4 rounded-3xl p-6">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold">{isRegister ? 'Create your profile' : 'Welcome back'}</h2>
           <button type="button" className="icon-btn" onClick={onClose} aria-label="Close"><I.X /></button>

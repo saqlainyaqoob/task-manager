@@ -18,7 +18,7 @@ export default function ProfileModal({ user, tasks, onUpdated, onLogout, onClose
 
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/50 p-4" onClick={onClose}>
-      <div onClick={(e) => e.stopPropagation()} className="glass w-full max-w-sm space-y-5 rounded-3xl p-6">
+      <div onClick={(e) => e.stopPropagation()} className="modal-panel  w-full max-w-sm space-y-5 rounded-3xl p-6">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold">Your profile</h2>
           <button className="icon-btn" onClick={onClose} aria-label="Close"><I.X /></button>
