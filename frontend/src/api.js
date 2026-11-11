@@ -2,6 +2,9 @@
 const TOKEN_KEY = 'tm_token';
 const GUEST_KEY = 'tm_guest';
 
+// Empty locally (uses the Vite proxy); set VITE_API_URL on Vercel.
+const API_BASE_URL = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+
 export const getToken = () => localStorage.getItem(TOKEN_KEY);
 export const setToken = (t) => (t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY));
 
@@ -20,7 +23,7 @@ async function request(path = '', options = {}) {
   const token = getToken();
   if (token) headers.Authorization = `Bearer ${token}`;
 
-  const res = await fetch('/api' + path, { ...options, headers });
+  const res = await fetch(`${API_BASE_URL}/api${path}`, { ...options, headers });
   if (res.status === 204) return null;
   const body = await res.json().catch(() => ({}));
   if (!res.ok) {
